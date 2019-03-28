@@ -151,6 +151,7 @@ class QueuePool(Pool):
                 return False
 
     def _dec_overflow(self):
+        self.logger.debug("Overflow connection discarded")
         if self._max_overflow == -1:
             self._overflow -= 1
             return True
